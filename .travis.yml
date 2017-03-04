@@ -38,7 +38,7 @@ script:
   # Console
   - qmake -qt=qt5 GameRubiksClockConsole.pro
   - make debug
-   ./RubiksClockConsole
+  - ./GameRubiksClockConsole
   # Desktop
   - qmake -qt=qt5 GameRubiksClockDesktop.pro
   - make debug
