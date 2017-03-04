@@ -36,19 +36,19 @@ before_script:
 script: 
   - ./download_other_githubs
   # Console
-  - qmake -qt=qt5 RubiksClockConsole.pro
+  - qmake -qt=qt5 GameRubiksClockConsole.pro
   - make debug
    ./RubiksClockConsole
   # Desktop
-  - qmake -qt=qt5 RubiksClockDesktop.pro
+  - qmake -qt=qt5 GameRubiksClockDesktop.pro
   - make debug
   - ./RubiksClockDesktop &
-  - sudo killall RubiksClockDesktop
+  - sudo killall GameRubiksClockDesktop
   # Website
-  - qmake -qt=qt5 RubiksClockWebsite.pro
+  - qmake -qt=qt5 GameRubiksClockWebsite.pro
   - make debug
   - ./RubiksClockWebsite &
-  - sudo killall RubiksClockWebsite
+  - sudo killall GameRubiksClockWebsite
   # Get code coverage
   - ./get_code_cov
   - codecov
