@@ -1,12 +1,7 @@
-INCLUDEPATH += \
-    ../../Games/GameRubiksClock
+INCLUDEPATH += $$PWD
 
 SOURCES += \
-    ../../Games/GameRubiksClock/rubiksclockmenudialog.cpp
+    $$PWD/rubiksclockmenudialog.cpp
 
 HEADERS  += \
-    ../../Games/GameRubiksClock/rubiksclockmenudialog.h
-
-OTHER_FILES += \
-    ../../Games/GameRubiksClock/Licence.txt
-
+    $$PWD/rubiksclockmenudialog.h

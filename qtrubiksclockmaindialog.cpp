@@ -78,15 +78,3 @@ void ribi::ruco::QtRubiksClockMainDialog::resizeEvent(QResizeEvent *)
   const QRectF r(ui->clock->geometry());
   ui->clock->GetWidget()->SetGeometry(r.x(),r.y(),r.width(),r.height());
 }
-
-#ifndef NDEBUG
-void ribi::ruco::QtRubiksClockMainDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
-}
-#endif

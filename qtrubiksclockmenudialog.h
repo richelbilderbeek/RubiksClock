@@ -36,7 +36,7 @@ namespace ruco {
 
 class QtRubiksClockMenuDialog : public QtHideAndShowDialog
 {
-  Q_OBJECT
+  Q_OBJECT //!OCLINT
 
 public:
   explicit QtRubiksClockMenuDialog(QWidget *parent = 0);
@@ -49,10 +49,6 @@ protected:
 
 private:
   Ui::QtRubiksClockMenuDialog *ui;
-
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
 
 private slots:
   void on_button_about_clicked();

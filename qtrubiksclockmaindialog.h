@@ -15,7 +15,7 @@ namespace ruco {
 
 class QtRubiksClockMainDialog : public QtHideAndShowDialog
 {
-  Q_OBJECT
+  Q_OBJECT //!OCLINT
   
 public:
   explicit QtRubiksClockMainDialog(QWidget *parent = 0);
@@ -30,10 +30,6 @@ private slots:
 
 private:
   Ui::QtRubiksClockMainDialog *ui;
-
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
 };
 
 } //~namespace ruco

@@ -1,13 +1,13 @@
-include(../../Games/GameRubiksClock/GameRubiksClockConsole.pri)
+include(GameRubiksClockConsole.pri)
 
 SOURCES += \
-    ../../Games/GameRubiksClock/wtrubiksclockmenudialog.cpp \
-    ../../Games/GameRubiksClock/wtrubiksclockmaindialog.cpp
+    $$PWD/wtrubiksclockmenudialog.cpp \
+    $$PWD/wtrubiksclockmaindialog.cpp
 
 HEADERS  += \
-    ../../Games/GameRubiksClock/wtrubiksclockmenudialog.h \
-    ../../Games/GameRubiksClock/wtrubiksclockmaindialog.h
+    $$PWD/wtrubiksclockmenudialog.h \
+    $$PWD/wtrubiksclockmaindialog.h
 
 
 RESOURCES += \
-    ../../Games/GameRubiksClock/GameRubiksClock.qrc
+    $$PWD/GameRubiksClock.qrc
