@@ -13,7 +13,6 @@
 #include "rubiksclockdialwidget.h"
 #include "rubiksclockside.h"
 #include "rubiksclockwidget.h"
-#include "richelbilderbeekprogram.h"
 #include "textcanvas.h"
 #include "togglebutton.h"
 #include "togglebuttonwidget.h"
@@ -100,15 +99,6 @@ ribi::Help ribi::ruco::MenuDialog::GetHelp() const noexcept
 
     }
   );
-}
-
-boost::shared_ptr<const ribi::Program> ribi::ruco::MenuDialog::GetProgram() const noexcept
-{
-  const boost::shared_ptr<const ribi::Program> p {
-    new ProgramRubiksClock
-  };
-  assert(p);
-  return p;
 }
 
 std::string ribi::ruco::MenuDialog::GetVersion() const noexcept

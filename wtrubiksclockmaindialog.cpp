@@ -76,16 +76,16 @@ ribi::ruco::WtRubiksClockMainDialog::WtRubiksClockMainDialog()
     this,
     &ribi::ruco::WtRubiksClockMainDialog::OnFlip);
 
-  m_ui.m_dial_size->GetWidget()->GetDial()->m_signal_position_changed.connect(
-    boost::bind(
-      &ribi::ruco::WtRubiksClockMainDialog::OnSizeChanged,
-      this));
+  //m_ui.m_dial_size->GetWidget()->GetDial().m_signal_position_changed.connect(
+  //  boost::bind(
+  //    &ribi::ruco::WtRubiksClockMainDialog::OnSizeChanged,
+  //    this));
 
   m_ui.m_dial_size->GetWidget()->SetGeometry(0,0,32,32);
   m_ui.m_label_size->setText("Size: ?x? (width x height)");
   m_ui.m_widget->GetWidget()->SetGeometry(0,0,300,300);
 
-  m_ui.m_dial_size->GetWidget()->GetDial()->SetPosition(0.5);
+  m_ui.m_dial_size->GetWidget()->GetDial().SetPosition(0.5);
 }
 
 void ribi::ruco::WtRubiksClockMainDialog::OnFlip()
@@ -96,7 +96,7 @@ void ribi::ruco::WtRubiksClockMainDialog::OnFlip()
 void ribi::ruco::WtRubiksClockMainDialog::OnSizeChanged()
 {
   const int size = boost::numeric_cast<int>(
-    500.0 * m_ui.m_dial_size->GetWidget()->GetDial()->GetPosition());
+    500.0 * m_ui.m_dial_size->GetWidget()->GetDial().GetPosition());
   m_ui.m_widget->GetWidget()->SetGeometry(0,0,size,size);
   std::string text
     = std::string("Size: ")
