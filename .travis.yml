@@ -44,12 +44,14 @@ script:
   # Desktop
   - qmake -qt=qt5 GameRubiksClockDesktop.pro
   - make debug
-  - ./RubiksClockDesktop &
+  - ./GameRubiksClockDesktop &
+  - sleep 10
   - sudo killall GameRubiksClockDesktop
   # Website
   - qmake -qt=qt5 GameRubiksClockWebsite.pro
   - make debug
-  - ./RubiksClockWebsite &
+  - ./GameRubiksClockWebsite &
+  - sleep 10
   - sudo killall GameRubiksClockWebsite
   # Get code coverage
   - ./get_code_cov
