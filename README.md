@@ -7,6 +7,10 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/RubiksClock.svg?
 
 C++ Rubik's Clock
 
+![Qt menu dialog](Screenshots/QtMenuDialog.png)
+
+![Wt menu dialog](Screenshots/WtMenuDialog.png)
+
 ## External links
 
  * [Richel Bilderbeek's games](https://github.com/richelbilderbeek/Games)
