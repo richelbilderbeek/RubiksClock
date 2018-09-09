@@ -40,17 +40,17 @@ script:
   - ./download_other_githubs
   # Console
   - qmake -qt=qt5 GameRubiksClockConsole.pro
-  - make debug
+  - make --silent debug
   - ./GameRubiksClockConsole
   # Desktop
   - qmake -qt=qt5 GameRubiksClockDesktop.pro
-  - make debug
+  - make --silent debug
   - ./GameRubiksClockDesktop &
   - sleep 10
   - sudo killall GameRubiksClockDesktop
   # Website
   - qmake -qt=qt5 GameRubiksClockWebsite.pro
-  - make debug
+  - make --silent debug
   - ./GameRubiksClockWebsite &
   - sleep 10
   - sudo killall GameRubiksClockWebsite
