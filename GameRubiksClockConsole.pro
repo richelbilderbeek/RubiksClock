@@ -25,16 +25,13 @@ include(GameRubiksClockConsole.pri)
 
 SOURCES += main.cpp
 
-# C++14
-CONFIG += c++14
-QMAKE_CXXFLAGS += -std=c++14
+# C++17
+CONFIG += c++17
+QMAKE_CXXFLAGS += -std=c++17
 
 # High warning levels
 # Qt does not go with -Weffc++
 QMAKE_CXXFLAGS += -Wall -Wextra -Wnon-virtual-dtor -Wshadow -pedantic -Werror
-
-# Fix error: unrecognized option '--push-state--no-as-needed'
-QMAKE_LFLAGS += -fuse-ld=gold
 
 # Debug and release mode
 CONFIG += debug_and_release
