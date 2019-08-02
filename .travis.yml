@@ -9,7 +9,6 @@ install:
   # Wt
   - sudo apt-get install witty witty-dbg witty-dev witty-doc
   # Codecov
-  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
   - sudo pip install codecov
   # OCLint
   - ./install_oclint
