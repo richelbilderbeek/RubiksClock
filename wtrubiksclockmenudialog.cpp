@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <cassert>
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -47,7 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "wttogglebuttonwidget.h"
 
 #include <QFile> //#include after Wt
-#pragma GCC diagnostic pop
+
 
 ribi::ruco::WtRubiksClockMenuDialog::WtRubiksClockMenuDialog()
 {

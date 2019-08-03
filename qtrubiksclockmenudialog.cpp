@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 #include "qtrubiksclockmenudialog.h"
 
@@ -12,7 +12,7 @@
 #include "qttogglebuttonwidget.h"
 #include "rubiksclockmenudialog.h"
 #include "ui_qtrubiksclockmenudialog.h"
-#pragma GCC diagnostic pop
+
 
 ribi::ruco::QtRubiksClockMenuDialog::QtRubiksClockMenuDialog(QWidget *parent) :
     QtHideAndShowDialog(parent),

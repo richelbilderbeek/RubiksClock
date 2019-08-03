@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 #include "qtrubiksclockmaindialog.h"
 
@@ -6,7 +6,7 @@
 #include <QKeyEvent>
 
 #include "ui_qtrubiksclockmaindialog.h"
-#pragma GCC diagnostic pop
+
 
 ribi::ruco::QtRubiksClockMainDialog::QtRubiksClockMainDialog(QWidget *parent) :
   QtHideAndShowDialog(parent),

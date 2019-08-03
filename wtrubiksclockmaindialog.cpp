@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------
 #include "wtrubiksclockmaindialog.h"
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -46,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "widget.h"
 #include "wtdialwidget.h"
 #include "wtrubiksclockwidget.h"
-#pragma GCC diagnostic pop
+
 
 ribi::ruco::WtRubiksClockMainDialog::Ui::Ui()
   : m_button_flip(new Wt::WPushButton("Flip clock")),
