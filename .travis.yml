@@ -7,7 +7,7 @@ install:
   # Boost
   - sudo apt install -qq libboost-all-dev
   # Wt
-  - sudo apt-get install witty witty-dbg witty-dev witty-doc
+  #- sudo apt-get install witty witty-dbg witty-dev witty-doc
   # Codecov
   - sudo pip install codecov
   # OCLint
@@ -29,11 +29,11 @@ script:
   - sleep 10
   - sudo killall GameRubiksClockDesktop
   # Website
-  - qmake -qt=qt5 GameRubiksClockWebsite.pro
-  - make --silent debug
-  - ./GameRubiksClockWebsite &
-  - sleep 10
-  - sudo killall GameRubiksClockWebsite
+  #- qmake -qt=qt5 GameRubiksClockWebsite.pro
+  #- make --silent debug
+  #- ./GameRubiksClockWebsite &
+  #- sleep 10
+  #- sudo killall GameRubiksClockWebsite
   # Get code coverage
   - ./get_code_cov >/dev/null
   - codecov >/dev/null
