@@ -35,8 +35,8 @@ script:
   - sleep 10
   - sudo killall GameRubiksClockWebsite
   # Get code coverage
-  - ./get_code_cov
-  - codecov
+  - ./get_code_cov >/dev/null
+  - codecov >/dev/null
   # Call OCLint
   - ./do_oclint
 
