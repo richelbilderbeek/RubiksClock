@@ -1,15 +1,37 @@
 # RubiksClock
 
-Branch|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Codecov logo](Codecov.png)](https://www.codecov.io)
----|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/RubiksClock.svg?branch=master)](https://travis-ci.org/richelbilderbeek/RubiksClock) | [![codecov.io](https://codecov.io/github/richelbilderbeek/RubiksClock/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/RubiksClock?branch=master)
-develop|[![Build Status](https://travis-ci.org/richelbilderbeek/RubiksClock.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/RubiksClock) | [![codecov.io](https://codecov.io/github/richelbilderbeek/RubiksClock/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/RubiksClock?branch=develop)
+[Go to the nicely rendered website](https://richelbilderbeek.github.io/RubiksClock/),
+where you can also play the game in your browser.
 
-C++ Rubik's Clock
+Rubik's Clock is a simulation of the Rubik's Clock puzzle,
+programmed in C++ using Qt.
 
-![Qt menu dialog](Screenshots/QtMenuDialog.png)
+![Rubik's Clock](docs/rubiksclock.png)
 
-![Wt menu dialog](Screenshots/WtMenuDialog.png)
+## Build
+
+Rubik's Clock needs Qt 6:
+
+```bash
+qmake RubiksClock.pro
+make
+```
+
+To build the WebAssembly version, do the same with the `qmake` of
+Qt for WebAssembly and the matching version of Emscripten.
+[build_game.yaml](.github/workflows/build_game.yaml)
+shows which versions are used and builds the Linux, Windows and WebAssembly versions.
+[create_zensical_website.yaml](.github/workflows/create_zensical_website.yaml)
+puts the WebAssembly and Windows versions on the website.
+
+## I want to contribute!
+
+Awesome!
+
+You can collaborate by
+
+ * add a GitHub issue: this can be a question, suggestion, or whatever
+ * fork this repository, make the changes, and submit a pull request.
 
 ## External links
 

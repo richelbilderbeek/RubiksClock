@@ -27,3 +27,26 @@
 *.out
 *.app
 *.pro.user
+Makefile
+Makefile*
+object_script*
+*_plugin_import.cpp
+debug/
+release/
+ui_*
+
+# Qt build output
+.qmake.stash
+moc_*
+qrc_*
+/rubiksclock
+rubiksclock.html
+rubiksclock.js
+rubiksclock.wasm
+qtloader.js
+qtlogo.svg
+
+# Generated when building the website
+/docs/rubiksclock_windows.zip
+/docs/game/
+/site/

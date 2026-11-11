@@ -1,34 +1,42 @@
+//---------------------------------------------------------------------------
+/*
+RubiksClock. Rubik's Clock game.
+Copyright (C) 2007-2026 Richel Bilderbeek
 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+//---------------------------------------------------------------------------
 #include "qtrubiksclockmaindialog.h"
 
-#include <QDesktopWidget>
-#include <QKeyEvent>
+#include <random>
+
+#include <QRandomGenerator>
 
 #include "ui_qtrubiksclockmaindialog.h"
-
 
 ribi::ruco::QtRubiksClockMainDialog::QtRubiksClockMainDialog(QWidget *parent) :
   QtHideAndShowDialog(parent),
   ui(new Ui::QtRubiksClockMainDialog)
 {
   ui->setupUi(this);
-
-  for (int i=0; i!=10000; ++i)
-  {
-    const int x = (std::rand() >> 4);
-    switch (x % 8)
-    {
-      case 0: ui->clock->GetWidget()->GetRubiksClock()->TogglePeg(Side::topLeft); break;
-      case 1: ui->clock->GetWidget()->GetRubiksClock()->TogglePeg(Side::topRight); break;
-      case 2: ui->clock->GetWidget()->GetRubiksClock()->TogglePeg(Side::bottomLeft); break;
-      case 3: ui->clock->GetWidget()->GetRubiksClock()->TogglePeg(Side::bottomRight); break;
-      case 4: ui->clock->GetWidget()->GetRubiksClock()->TurnWheel(Side::topLeft,(x >> 4) % 11); break;
-      case 5: ui->clock->GetWidget()->GetRubiksClock()->TurnWheel(Side::topRight,(x >> 4) % 11); break;
-      case 6: ui->clock->GetWidget()->GetRubiksClock()->TurnWheel(Side::bottomLeft,(x >> 4) % 11); break;
-      case 7: ui->clock->GetWidget()->GetRubiksClock()->TurnWheel(Side::bottomRight,(x >> 4) % 11); break;
-    }
-  }
+  QObject::connect(
+    ui->clock,
+    &QtRubiksClockWidget::clock_changed,
+    this,
+    &QtRubiksClockMainDialog::UpdateStatus
+  );
+  on_button_scramble_clicked();
 }
 
 ribi::ruco::QtRubiksClockMainDialog::~QtRubiksClockMainDialog() noexcept
@@ -36,19 +44,28 @@ ribi::ruco::QtRubiksClockMainDialog::~QtRubiksClockMainDialog() noexcept
   delete ui;
 }
 
-void ribi::ruco::QtRubiksClockMainDialog::keyPressEvent(QKeyEvent * e)
-{
-  if (e->key()  == Qt::Key_Escape) close();
-}
-
 void ribi::ruco::QtRubiksClockMainDialog::on_button_flip_clicked()
 {
-  ui->clock->GetWidget()->Flip();
+  ui->clock->Flip();
+  UpdateStatus();
 }
 
-void ribi::ruco::QtRubiksClockMainDialog::resizeEvent(QResizeEvent *)
+void ribi::ruco::QtRubiksClockMainDialog::on_button_scramble_clicked()
 {
-  //const QRectF r(ui->widget_hold_clock->geometry().adjusted(0.0,0.0,-16.0,-16.0));
-  const QRectF r(ui->clock->geometry());
-  ui->clock->GetWidget()->SetGeometry(r.x(),r.y(),r.width(),r.height());
+  std::mt19937 rng(QRandomGenerator::global()->generate());
+  ui->clock->Scramble(rng);
+  UpdateStatus();
+}
+
+void ribi::ruco::QtRubiksClockMainDialog::UpdateStatus()
+{
+  const QString side{ui->clock->GetDisplayFront() ? "Front" : "Back"};
+  if (ui->clock->GetClock().IsSolved())
+  {
+    ui->label_status->setText(side + ": solved!");
+  }
+  else
+  {
+    ui->label_status->setText(side + ": make all dials point up");
+  }
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>152</width>
-    <height>325</height>
+    <width>400</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="font">
@@ -19,7 +19,7 @@
    <string>Rubik's Clock</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="GameRubiksClock.qrc">
+   <iconset resource="RubiksClock.qrc">
     <normaloff>:/images/GameRubiksClockIcon14x14.png</normaloff>:/images/GameRubiksClockIcon14x14.png</iconset>
   </property>
   <property name="styleSheet">
@@ -61,8 +61,8 @@ QPushButton { font: 48px, &quot;monospace&quot; }</string>
     <widget class="QLabel" name="label">
      <property name="maximumSize">
       <size>
-       <width>100</width>
-       <height>100</height>
+       <width>200</width>
+       <height>200</height>
       </size>
      </property>
      <property name="autoFillBackground">
@@ -72,7 +72,7 @@ QPushButton { font: 48px, &quot;monospace&quot; }</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="GameRubiksClock.qrc">:/images/GameRubiksClockTransparent.png</pixmap>
+      <pixmap resource="RubiksClock.qrc">:/images/GameRubiksClockTransparent.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -118,7 +118,7 @@ QPushButton { font: 48px, &quot;monospace&quot; }</string>
   <tabstop>button_quit</tabstop>
  </tabstops>
  <resources>
-  <include location="GameRubiksClock.qrc"/>
+  <include location="RubiksClock.qrc"/>
  </resources>
  <connections/>
 </ui>
