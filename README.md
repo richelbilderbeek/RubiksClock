@@ -1,5 +1,7 @@
 # RubiksClock
 
+[![codecov](https://codecov.io/gh/richelbilderbeek/RubiksClock/branch/main/graph/badge.svg)](https://codecov.io/gh/richelbilderbeek/RubiksClock)
+
 [Go to the nicely rendered website](https://richelbilderbeek.github.io/RubiksClock/),
 where you can also play the game in your browser.
 

@@ -4,5 +4,6 @@ Richel
 Richèl
 RubiksClock
 WebAssembly
+codecov
 yaml
 zensical

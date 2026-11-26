@@ -2,7 +2,7 @@
 site_name = "Rubik's Clock"
 site_url = "https://richelbilderbeek.github.io/RubiksClock/"
 repo_url = "https://github.com/richelbilderbeek/RubiksClock"
-edit_uri = "blob/master/docs/"
+edit_uri = "blob/main/docs/"
 
 nav = [
   { "Start" = "README.md"},
